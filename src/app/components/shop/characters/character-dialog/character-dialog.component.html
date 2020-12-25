@@ -1,0 +1,64 @@
+<div class="product-dialog">
+
+  <div class="close-btn-outer">
+    <button mat-mini-fab color="warn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <div fxLayout="row wrap">
+      <div fxFlex="100" fxFlex.gt-sm="60" *ngIf="hideScene">
+        <div class="swiper-container h-100">
+          <div class="swiper-wrapper">
+            <!-- <img [src]="apiUrl+':8100/file-transfer-service/items/'+ product.id+'/'+ product['twoD'][0]" alt=""
+              class="img-fluid"> -->
+            <ngx-character-scene></ngx-character-scene>
+          </div>
+
+        </div>
+      </div>
+      <div fxFlex="100" [fxFlex.gt-sm]="hideScene? '40' : '100'" ngClass.gt-sm="px-2 m-0" ngClass.sm="mt-2"
+        ngClass.xs="mt-2">
+        <div class="product-right">
+          <div class="product-details">
+            <h2 class="mb-10">{{character.characterName}}</h2>
+
+            <h3 class="price mb-10">{{character.gendar}}</h3>
+            <div class="discription">
+              <p><span class="bold">Character type:</span> {{character.characterType}}</p>
+              <p><span class="bold">Age:</span> {{character.age}}</p>
+              <p><span class="bold">Body Form:</span> {{character.bodyForm}}</p>
+              <p><span class="bold">Height(Head to Feet):</span> {{character.headToFeet}} cm</p>
+              <p><span class="bold">Height(Shoulder to Feet):</span> {{character.shoulderToFeet}} cm</p>
+              <p><span class="bold">Height(Shoulder to Under Knee):</span> {{character.shoulderToUnderKnee}} cm</p>
+              <p><span class="bold">Height(Shoulder to Heel):</span> {{character.shoulderToHeel}} cm</p>
+              <p><span class="bold">Height(Shoulder to Hip):</span> {{character.shoulderToHip}} cm</p>
+              <p><span class="bold">Leg Length:</span> {{character.leg}} cm</p>
+              <p><span class="bold">Sleeve Length:</span> {{character.sleeve}} cm</p>
+              <p><span class="bold">Chest:</span> {{character.chest}} cm</p>
+              <p><span class="bold">Waist:</span> {{character.waist}} cm</p>
+              <p><span class="bold">Neck:</span> {{character.neck}} cm</p>
+              <p><span class="bold">Hip:</span> {{character.hip}} cm</p>
+              <p><span class="bold">Skin Color:</span> <span [ngStyle]="{'background': character.skinColor }"
+                  style="width: 65px;height: 10px;display: inline-block;margin: 0 5px;"></span>
+              </p>
+              <p><span class="bold">Hair Color:</span> <span [ngStyle]="{'background': character.hairColor }"
+                  style="width: 65px;height: 10px;display: inline-block;margin: 0 5px;"></span>
+              </p>
+              <p><span class="bold">Eye Color:</span> <span [ngStyle]="{'background': character.eyeColor }"
+                  style="width: 65px;height: 10px;display: inline-block;margin: 0 5px;"></span>
+              </p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="sec-padding">
+    <div fxLayout='row' fxLayout.lt-md="column">
+        <div fxFlex="100" fxFlex.lt-sm="100" class="all-products" ngClass.gt-sm="p-left" fxFlex.gt-sm="50">
+            <div class="container">
+                <!-- <button type="button" mat-raised-button color="primary" class="mb-1" style="color: #fff;"
+                    (click)="openCharacterDialog()">Character
+                    Info</button> -->
+                <ngx-character-scene></ngx-character-scene>
+            </div>
+
+        </div>
+        <div fxFlex="100" fxFlex.lt-sm="100" class="all-products" ngClass.gt-sm="p-left" fxFlex.gt-sm="50">
+            <div class="left-sidebar-wrapper">
+                <div class="container">
+                    <div class="vertical-products">
+                        <div class="widget-column">
+                            <div class="title">
+                                <h4 class="widget-title">Fit Products</h4>
+                            </div>
+                        </div>
+                        <div class="sidebar-wrapper" fxLayout='row' fxLayout.lg="column">
+                            <div fxFlex="100" fxFlex.lt-sm="100" class="all-products" fxFlex.gt-sm="100"
+                                style="padding: 0;">
+                                <app-fit-product></app-fit-product>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

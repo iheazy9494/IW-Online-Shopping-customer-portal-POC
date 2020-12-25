@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+@import '~swiper/dist/css/swiper.min.css';
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Color 1 scss
+@import './assets/scss/color1.scss';
+
+.status {
+    width: 40px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.product-dialog .product-right .buttons .mat-icon {
+    color: #787878;
+    margin-left: 17px;
+    cursor: pointer;
+}
+
+.swiper-wrapper {
+    transform: none;
+}

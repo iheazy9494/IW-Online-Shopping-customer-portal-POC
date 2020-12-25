@@ -1,0 +1,59 @@
+<div fxLayout="row wrap" class="products-wrapper">
+    <div fxFlex="100" fxFlex.gt-sm="50" fxFill.gt-xs="50" fxFlex.sm="100" class="col"
+        *ngFor="let product of ItemFitArr; let i =index">
+        <div class="product-box" *ngIf="product.threeD.length>0">
+            <div class="product-item">
+                <mat-card fxLayout="column">
+                    <div class="product-img">
+                        <a class="product-link">
+                            <img [src]="apiUrl+':8100/file-transfer-service/items/'+ product.id+'/'+product.twoD[0]"
+                                alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="product-info-wrapper">
+                        <span class="category">{{product.subtype1}}</span>
+                        <div class="title-wrap">
+                            <h4>{{product.name}}</h4>
+                        </div>
+                        <div class="stars">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="price-wrap" fxLayout="row" fxLayoutAlign="space-between center">
+                            <div *ngIf="product.sizeFit != null"><strong class="mr-1">Size
+                                    Fit:</strong><span>{{product.sizeFit}}</span>
+                                <span class="status ml-3"
+                                    [ngClass]="product.sizeFit ==='Perfectly fit' ? 'bg-success' : 'bg-warning'"></span>
+                            </div>
+
+                            <a>
+                                <mat-icon class="mat-icon-lg mat-icon material-icons">shopping_cart</mat-icon>
+                            </a>
+                        </div>
+                        <p>Size: {{product.size}}</p>
+                        <p>150 EGP</p>
+                        <div class="d-flex mb-1 ">
+                            <button class="text-white" [disabled]="!characterLoaded || itemLoaded || runAnimation "
+                                (click)="onLoadItem(product)" mat-raised-button color="primary"
+                                style="color: #fff;">View</button>
+                        </div>
+                        <div class="icons" fxLayout="column">
+                            <a>
+                                <mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon>
+                            </a>
+                            <a (click)="openProductDialog(product)">
+                                <mat-icon>remove_red_eye</mat-icon>
+                            </a>
+                            <a>
+                                <mat-icon>cached</mat-icon>
+                            </a>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

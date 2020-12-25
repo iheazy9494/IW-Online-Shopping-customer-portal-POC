@@ -1,0 +1,25 @@
+<div class="left-sidebar-wrapper sec-padding">
+    <div class="container">
+        <div class="vertical-products sec-padding">
+            <div class="widget-column">
+                <div class="title">
+                    <h4 class="widget-title">Characters</h4>
+                </div>
+            </div>
+            <div class="sidebar-wrapper" fxLayout='row' fxLayout.lt-md="column">
+
+                <div fxFlex="100" fxFlex.lt-sm="100" class="all-products" ngClass.gt-sm="p-left">
+
+                    <div fxLayout="row wrap" class="products-wrapper">
+                        <div *ngFor="let character of Characters " fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50"
+                            class="col">
+                            <div class="product-box">
+                                <app-character [character]="character"></app-character>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

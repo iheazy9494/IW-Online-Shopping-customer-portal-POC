@@ -1,0 +1,37 @@
+<div class="engine-wrapper" [ngClass]="{'full': fullscreen}">
+    <canvas #rendererCanvas id="renderCanvas"></canvas>
+    <ng-container *ngIf="fileDownloaded">
+        <div class="overlay"></div>
+        <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
+    </ng-container>
+    <div class="fullBtn" (click)="full()">
+        <img src="assets/fullscreen.png" alt="fullscreen" class="img-fluid">
+    </div>
+    <div class="toggleAnimation " nbTooltip="Toggle animation" nbTooltipStatus="primary" *ngIf="hideAnim">
+        <ui-switch (change)="onAnim()"></ui-switch>
+
+    </div>
+</div>
+<div class="sceneBg" [ngClass]="{'sceneBgfull': fullscreen}">
+    <ul class="list-inline" fxLayout='row'>
+        <li class="list-inline-item" *ngFor="let item of sceneBg; let i = index" [class.active]="selectedIndex === i">
+            <a class=" text-xs-center" routerLink="" (click)="changeSceneBg(item,i)">
+                <img [src]="item.thum" alt="idealwaves" class="img-fluid">
+            </a>
+        </li>
+
+    </ul>
+</div>
